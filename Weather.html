@@ -1,39 +1,60 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link
-      rel="icon"
-      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzS3eJDy8zC_hYUTDejQbJ0CEURpXmZrMaTA&s"
-    />
-    <link rel="stylesheet" href="./output.css" />
-  </head>
-  <body class="bg-linear-to-t from-sky-500 to-indigo-500 bg-no-repeat h-screen">
-    <div
-      class="shadow-2xl w-100 mx-auto mt-8 bg-white flex-col min-h-50 p-5 rounded-2xl"
-    >
-      <h1 class="font-bold text-center text-3xl text-blue-500">
-        Weather Application
-      </h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+
+  <!-- Tailwind CDN (IMPORTANT) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzS3eJDy8zC_hYUTDejQbJ0CEURpXmZrMaTA&s"
+  />
+</head>
+
+<body
+  id="appBody"
+  class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-400 via-indigo-500 to-purple-600 transition-all duration-700"
+>
+
+  <!-- Weather Card -->
+  <div
+  class="backdrop-blur-lg bg-black/40 rounded-2xl shadow-2xl p-8 w-[90%] max-w-md text-slate-100"
+>
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold text-center mb-6">
+      🌦️ Weather Application
+    </h1>
+
+    <!-- Search Section -->
+    <div class="flex gap-2">
       <input
         type="text"
-        placeholder="Enter City Name"
         id="city-name"
-        class="border border-gray-400 rounded-md p-1 mt-4"
+        placeholder="Enter city name"
+        class="w-full px-4 py-2 rounded-lg text-black outline-none focus:ring-2 focus:ring-blue-400"
       />
-      <button id="search-btn" 
-      class="bg-blue-400 mt-15 p-2 rounded-md text-white text-xl font-semibold hover:bg-blue-300">Search</button>
-      <div id="result"></div>
+
+      <button
+        id="search-btn"
+        class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold flex items-center justify-center gap-2"
+      >
+        🔍 <span class="hidden sm:inline">Search</span>
+      </button>
     </div>
 
+    <!-- Result Section -->
+    <div id="result" class="mt-6 text-center space-y-2">
+      <!-- Weather result will appear here -->
+    </div>
 
-    <script src="Weather.js"></script>
-  </body>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="Weather.js"></script>
+</body>
 </html>
-
-
-<!-- 2f337511d1774b914693cbafbe0189e2 -->
-
-<!-- https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key} -->
